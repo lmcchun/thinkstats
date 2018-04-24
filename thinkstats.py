@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from operator import itemgetter
+
 def Mean(t):
 	"""Computes the mean of a sequence of numbers.
 
@@ -19,3 +21,8 @@ def Mode(hist):
 			max = count
 			keyOfMax = key
 	return keyOfMax
+
+def AllModes(hist):
+	pairList = [(key, count) for key, count in hist.iteritems()]
+	getCount = itemgetter(1)
+	return sorted(pairList, key=getCount, reverse=True)
