@@ -10,3 +10,12 @@ def Mean(t):
 		float
 	"""
 	return float(sum(t)) / len(t)
+
+def Mode(hist):
+	max = 0
+	keyOfMax = None
+	for key, count in hist.iteritems():
+		if count > max:
+			max = count
+			keyOfMax = key
+	return keyOfMax
